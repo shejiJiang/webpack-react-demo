@@ -1,22 +1,12 @@
 const path = require('path');
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-
-  mode: 'development',
-
   entry: './src/index.tsx',
 
   resolve: {
-    extensions: ['.ts', '.tsx', '.js', '.jsx'],
-  },
-
-  devtool: 'inline-source-map',
-
-  devServer: {
-    contentBase: './dist',
-    historyApiFallback: true
+    extensions: ['.ts', '.tsx', '.js', '.jsx']
   },
 
   output: {
@@ -42,12 +32,12 @@ module.exports = {
         test: /\.(png|ico|jpg|jpeg|gif|eot|ttf|woff|woff2|svg|svgz)$/,
         use: ['url-loader?limit=100000']
       }
-    ],
+    ]
   },
 
   plugins: [
     new ExtractTextPlugin({
-      filename: "style.css",
+      filename: 'style.css',
       allChunks: true
     }),
     new HtmlWebpackPlugin({
